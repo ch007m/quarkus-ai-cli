@@ -40,11 +40,11 @@ public class FileSystemTool {
             return "Confirmation failed: Console not available.";
         }
 
-        System.out.println("\n--------------------------------------------------");
-        System.out.println("AI is requesting to WRITE to the file: " + path);
-        System.out.println("Content to be written:");
-        System.out.println(content);
-        System.out.println("--------------------------------------------------");
+        logger.info("\n--------------------------------------------------");
+        logger.info("AI is requesting to WRITE to the file: " + path);
+        logger.info("Content to be written:");
+        logger.info(content);
+        logger.info("--------------------------------------------------");
         String confirmation = console.readLine("Do you want to proceed? (y/n): ");
 
         if (!"y".equalsIgnoreCase(confirmation)) {
@@ -53,7 +53,8 @@ public class FileSystemTool {
 
         try {
             Path filePath = Paths.get(path);
-            Files.createDirectories(filePath.getParent());
+            logger.infof("File path is: %s",filePath);
+            //Files.createDirectories(filePath.getParent());
             Files.writeString(filePath, content);
             return "File '" + path + "' written successfully.";
         } catch (IOException e) {
