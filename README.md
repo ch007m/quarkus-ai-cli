@@ -9,7 +9,9 @@ set -xg CLAUDE_CLI_PATH $(pwd)/target/quarkus-app/quarkus-run.jar
 
 Start the Quarkus Claude CLI under a project containing a pom.xml and start to play your instructions
 ```shell
-java -jar $CLAUDE_CLI_PATH -Dquarkus.langchain4j.anthropic.api-key=<API_KEY> -Dquarkus.langchain4j.anthropic.base-url=<AI_URL>
+set -gx QUARKUS_LANGCHAIN4J_ANTHROPIC_API_KEY <API_KEY>
+set -gx QUARKUS_LANGCHAIN4J_ANTHROPIC_BASE_URL <AI_URL>
+java -jar $CLAUDE_CLI_PATH
 
 2025-10-07 14:32:19,799 INFO  [dev.sno.ai.qua.ClaudeAI] (main) Hello! I'm your document assistant. Ask me anything about your files.
 2025-10-07 14:32:19,799 INFO  [dev.sno.ai.qua.ClaudeAI] (main) Type 'exit' to quit.
