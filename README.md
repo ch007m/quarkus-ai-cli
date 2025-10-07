@@ -19,11 +19,11 @@ java -jar $CLAUDE_CLI_PATH
 > Add the Apache Commons Lang dependency to the pom.xml.
 ```
 
-## TODO: Scenario to be tested
+## Scenario tested on SpringBoot TODO
 
 ```text
-> Can you read the pom.xml file and tell me what it is ?
-> Can you edit the pom.xml file to add the Quarkus BOM dependency within the dependencymanagement section and quarkus-arc, quarkus-core dependencies. The version of quarkus to be defined within the pom.xml properties is 3.26.4.
-> Can you read the pom.xml file ?
-> Can you read the pom.xml file and when done add the Apache Commons library to the pom.xml. Send me back the response and use the response to update and write the change within the pom.xml file 
+> Can you add to the pom.xml file the Quarkus BOM dependency within the dependencyManagement section and the following dependencies: quarkus-arc, quarkus-core. The version of quarkus to be used and to included within the pom.xml properties is 3.26.4.
+> Can you now remove the @SpringBootApplication from the java file which contains it. Next add to the same java class the @QuarkusMain annotation. The AppApplication should not implement QuarkusApplication. Remove within the main body SpringApplication run(..) and replace it with Quarkus.run and pass to the method of quarkus.run the arguments
+> Add a new class com.todo.app.TodoApplication which implements QuarkusApplication. Use stdout to send a message: "Hello user" using args[0]. Next Pass as first argument: TodoApplication.class to Quarkus.run()
+> Remove from the pom.xml the spring-boot-maven-plugin and use instead the quarkus plugin
 ```
