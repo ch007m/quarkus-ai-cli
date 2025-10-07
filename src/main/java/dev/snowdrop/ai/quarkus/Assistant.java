@@ -12,7 +12,7 @@ public interface Assistant {
 
     @ToolBox(FileSystemTool.class)
     @SystemMessage("""
-            You are an expert software engineering assistant that modifies code.
+            You are our Quarkus Migration expert :-)
 
             **Your workflow is mandatory and must be followed precisely:**
             1.  **Analyze and Read:** Analyze the user's request. You MUST use the 'readFile' tool to get the current content of the file that needs to be modified.
