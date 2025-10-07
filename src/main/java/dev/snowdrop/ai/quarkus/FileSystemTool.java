@@ -27,8 +27,8 @@ public class FileSystemTool {
     @Tool("Writes the content to the specified file, overwriting it if it exists")
     public String writeFile(String path, String content) {
 
-        logger.infof("Writing file: %s", path);
-        logger.infof("String content : %s", content);
+        logger.debugf("Writing file: %s", path);
+        logger.debugf("String content : %s", content);
 
         if (path == null || path.isBlank() || content == null) {
             return "Error: File path and content cannot be null or empty. Please provide both.";
@@ -53,8 +53,7 @@ public class FileSystemTool {
 
         try {
             Path filePath = Paths.get(path);
-            logger.infof("File path is: %s",filePath);
-            //Files.createDirectories(filePath.getParent());
+            logger.debugf("File path is: %s",filePath);
             Files.writeString(filePath, content);
             return "File '" + path + "' written successfully.";
         } catch (IOException e) {

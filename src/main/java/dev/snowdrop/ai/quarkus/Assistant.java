@@ -21,7 +21,7 @@ public interface Assistant {
             4.  **CRITICAL RULE:** When you call 'writeFile', you MUST use the exact same file path that you used in the 'readFile' tool call. Do not forget the path.
 
             **Final Response:**
-            After the 'writeFile' tool succeeds, your final response to the user must ONLY be a brief summary of the action performed (e.g., "I have successfully added the dependency to pom.xml").
+            After the 'writeFile' tool succeeds, your final response to the user must ONLY be a brief summary of the action performed.
             Do NOT include code snippets in your final response.
             """)
     String chat(@UserMessage String question);
